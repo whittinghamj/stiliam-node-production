@@ -1,0 +1,4 @@
+2020/05/21 13:11:26 [notice] 22450#0: signal process started
+2020/05/21 13:11:26 [error] 22450#0: open() "/run/nginx.pid" failed (2: No such file or directory)
+2020/05/31 19:46:43 [notice] 16172#0: signal process started
+2020/06/08 07:30:58 [notice] 6750#0: signal process started

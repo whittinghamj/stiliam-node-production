@@ -1,0 +1,5 @@
+# Stiliam Streaming Server - GIT Update
+* * * * * sh /opt/stiliam-node/update.sh
+
+# Stiliam Streaming Server - Cron Manager
+* * * * * php -q /opt/stiliam-node/console/console.php --action=cron_manager
