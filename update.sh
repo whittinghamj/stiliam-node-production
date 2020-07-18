@@ -33,7 +33,7 @@ chmod 777 /var/www/html/play/247_channels
 
 
 # copy files for http server
-cp /opt/stiliam-node/version.txt /var/www/html
+cp /opt/stiliam-node/version.txt /var/www/html/node_version.txt
 cp /opt/stiliam-node/www/stream_progress.php /var/www/html
 cp /opt/stiliam-node/www/stream.php /var/www/html
 cp /opt/stiliam-node/www/streams.php /var/www/html
@@ -63,6 +63,19 @@ cp -R /opt/stiliam-node/www/speedtest /var/www/html
 
 # set permissions to everyone for php files
 chmod 777 /var/www/html/*.php
+
+
+# grant sudo access
+sudo_status=$(cat /etc/sudoers | grep www-data | wc -l)
+if [ "$sudo_status" -eq "0" ]; then
+   echo "Adding www-data to sudo group.";
+   echo "www-data    ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+fi
+sudo_status=$(cat /etc/sudoers | grep whittinghamj | wc -l)
+if [ "$sudo_status" -eq "0" ]; then
+   echo "Adding whittinghamj to sudo group.";
+   echo "whittinghamj    ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+fi
 
 
 # check for nginx offline

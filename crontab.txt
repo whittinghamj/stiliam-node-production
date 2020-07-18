@@ -1,5 +1,11 @@
 # Stiliam Streaming Server - GIT Update
-* * * * * sh /opt/stiliam-node/update.sh
+1 * * * * sh /opt/stiliam-node/update.sh
 
 # Stiliam Streaming Server - Cron Manager
 * * * * * php -q /opt/stiliam-node/console/console.php --action=cron_manager
+
+# Stiliam Streaming Server - Library Folder Manager - Movies
+1 * * * * php -q /opt/stiliam-node/console/console.php --action=vod_monitored_folder_scan
+
+# Stiliam Streaming Server - Library Folder Manager - TV
+1 * * * * php -q /opt/stiliam-node/console/console.php --action=vod_tv_monitored_folder_scan
