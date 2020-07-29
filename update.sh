@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # vars
 VERSION=$(cat /opt/stiliam-node/version.txt)
 
@@ -44,17 +43,21 @@ cp /opt/stiliam-node/www/api.php /var/www/html
 cp /opt/stiliam-node/www/test.php /var/www/html
 cp /opt/stiliam-node/config.json /var/www/html
 
-cp /opt/stiliam-node/www/server_channel.php /var/www/html
-cp /opt/stiliam-node/www/server_vod.php /var/www/html
-
 cp /opt/stiliam-node/www/stream_channel.php /var/www/html
 cp /opt/stiliam-node/www/stream_channel_247.php /var/www/html
 cp /opt/stiliam-node/www/stream_vod.php /var/www/html
 cp /opt/stiliam-node/www/stream_vod_tv.php /var/www/html
+
+cp /opt/stiliam-node/www/stream_admin_channel.php /var/www/html
+cp /opt/stiliam-node/www/stream_admin_channel_247.php /var/www/html
+cp /opt/stiliam-node/www/stream_admin_vod.php /var/www/html
+cp /opt/stiliam-node/www/stream_admin_vod_tv.php /var/www/html
+
 cp /opt/stiliam-node/www/customer_dev.php /var/www/html
 cp /opt/stiliam-node/www/system_stats.php /var/www/html
 cp /opt/stiliam-node/www/scan_folder_folders.php /var/www/html
 cp /opt/stiliam-node/www/scan_folder_files.php /var/www/html
+cp /opt/stiliam-node/www/filebrowser.php /var/www/html
 cp /opt/stiliam-node/www/filebrowser.php /var/www/html/play/vod
 cp /opt/stiliam-node/www/filebrowser.php /var/www/html/play/tv_series
 cp /opt/stiliam-node/www/filebrowser.php /var/www/html/play/247_channels
