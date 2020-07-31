@@ -62,6 +62,7 @@ cp /opt/stiliam-node/www/filebrowser.php /var/www/html/play/vod
 cp /opt/stiliam-node/www/filebrowser.php /var/www/html/play/tv_series
 cp /opt/stiliam-node/www/filebrowser.php /var/www/html/play/247_channels
 cp -R /opt/stiliam-node/www/speedtest /var/www/html
+cp -R /opt/stiliam-node/www/adult_streams /var/www/html
 
 
 # set permissions to everyone for php files
