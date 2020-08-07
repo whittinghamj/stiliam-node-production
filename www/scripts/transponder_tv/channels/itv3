@@ -1,0 +1,31 @@
+   <?php
+
+$curl = curl_init();
+        $headers[] = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
+        $headers[] = 'Accept-Language: en-us,en;q=0.5';
+        $headers[] = 'Accept-Charset: utf-8';
+        $headers[] = 'Keep-Alive: 300';
+        $headers[] = 'Connection: Keep-Alive';
+        $headers[] = 'X-Requested-With: XMLHttpRequest';
+        curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/".rand(3,5).".".rand(0,3)." (Windows NT ".rand(3,5).".".rand(0,2)."; rv:2.0.1) Gecko/20100101 Firefox/".rand(3,5).".0.1");
+        curl_setopt($curl, CURLOPT_REFERER, 'https://www.transponder.tv');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+        
+            curl_setopt($curl, CURLOPT_COOKIEFILE, '/var/www/html/tvtranscookie.txt');
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 120);
+        curl_setopt($curl, CURLOPT_URL, 'https://www.transponder.tv/watch/itv3');
+            $login = curl_exec($curl); 
+
+preg_match('/(http.*?\.m3u8[^\"\'>]+)/',$login,$m); 
+$sp = $m[1];
+
+//echo $tomar;
+curl_close($curl);
+header("Location: $sp");
+
+//echo $tomar4;
+exit;
+?>

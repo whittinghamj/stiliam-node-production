@@ -62,7 +62,10 @@ cp /opt/stiliam-node/www/filebrowser.php /var/www/html/play/vod
 cp /opt/stiliam-node/www/filebrowser.php /var/www/html/play/tv_series
 cp /opt/stiliam-node/www/filebrowser.php /var/www/html/play/247_channels
 cp -R /opt/stiliam-node/www/speedtest /var/www/html
-cp -R /opt/stiliam-node/www/adult_streams /var/www/html
+
+
+# copy web scripts folder
+cp -R /opt/stiliam-node/www/scripts /var/www/html
 
 
 # set permissions to everyone for php files
@@ -88,6 +91,10 @@ if [ "$nginx_status" -eq "0" ]; then
    echo "Starting NGINX Streaming Server.";
    /usr/local/nginx/sbin/nginx
 fi
+
+
+# install streamlink 1.5.0 if not already installed
+command -v streamlink >/dev/null 2>&1 || { sudo add-apt-repository ppa:nilarimogard/webupd8 -y; sudo apt-get update -y; sudo apt-get install streamlink -y; }
 
 
 # finished
